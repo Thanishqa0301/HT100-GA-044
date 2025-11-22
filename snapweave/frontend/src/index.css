@@ -1,0 +1,55 @@
+/* ===== Custom Global Styles ===== */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Background curvy blur lines */
+.bg-lines {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bg-lines::before,
+.bg-lines::after {
+  content: "";
+  position: absolute;
+  width: 1200px;
+  height: 1200px;
+  filter: blur(120px);
+  opacity: 0.35;
+  transform: rotate(20deg);
+}
+
+/* Pink line */
+.bg-lines::before {
+  top: -300px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(255,80,160,0.8), rgba(255,80,160,0));
+}
+
+/* Blue line */
+.bg-lines::after {
+  bottom: -300px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(80,140,255,0.8), rgba(80,140,255,0));
+}
+
+/* Custom drag & drop hover state */
+.drop-hover {
+  border-color: #6366f1 !important;
+  background-color: rgba(99,102,241,0.05);
+}
+
+/* Smooth fade-in animations */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
